@@ -49,7 +49,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
                 Yii::$app->session->setFlash('success', 'Запись успешно создана');
-                $model = new Registrations();
+                return $this->redirect(['index']);
             }
         }
 
